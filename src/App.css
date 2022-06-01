@@ -13,6 +13,16 @@
   }
 }
 
+.poke{
+  width: 270px;
+}
+
+hr{
+  background-color: #81c470;
+  height: 1.7px;
+  width: 96%;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
