@@ -1,12 +1,34 @@
 import './form.css'
+import {useState} from 'react'
 
-export function Formulario() {
+export const Formulario =({setCategoriasBusqueda})=>{
+    const [valorBusqueda, setValorBusqueda] = useState('');
+
+    const cambiarValorBusqueda= (e) => {
+        setValorBusqueda(e.target.value);
+    }
+
+    const buscar = (e)=>{
+        e.preventDefault();
+        if (valorBusqueda.trim().length > 0){
+          setCategoriasBusqueda(valores => [valorBusqueda, ...valores])
+          setValorBusqueda('')
+        }
+        
+    }
+
     return(
         <>
-            <form>
+            <form onSubmit={buscar}>
                 <p>REGISTRAR POKEMON</p>
-                <input type="text" placeholder="Nombre del pokemon" id="Valorusqueda"/>
-                <button type="submit">Add</button>
+                <input 
+                    type="text" 
+                    placeholder="Nombre del pokemon" 
+                    id="Valorusqueda"
+                    value = {valorBusqueda}
+                    onChange={cambiarValorBusqueda}
+                />
+                {/* <button type="submit">Add</button> */}
             </form>
         </>
     );
