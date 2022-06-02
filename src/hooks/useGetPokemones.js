@@ -8,16 +8,15 @@ export const useGetPokemones = (valorBusqueda) => {
         cargando: true
     })
 
-    useEffect(()=>{
-        setTimeout(()=>
-            getPokemon(valorBusqueda)
-            .then(pokemones =>{
-                setEstado({
-                    pokemones: pokemones,
-                    cargando: false
-                });
-            }), 1000)
-    },[valorBusqueda])
+    useEffect(() =>{
+        setTimeout(() =>{
+            let pokemones = getPokemon(valorBusqueda)
+            setEstado({
+                pokemones: pokemones,
+                cargando: false
+            })
+        }, 1000)
+    }, [valorBusqueda])
 
     return estado;
   
