@@ -28,7 +28,7 @@ export const Formulario =({setCategoriasBusqueda})=>{
                     value = {valorBusqueda}
                     onChange={cambiarValorBusqueda}
                 />
-                {/* <button type="submit">Add</button> */}
+                <button type="submit">Add</button>
             </form>
         </>
     );

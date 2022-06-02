@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Formulario } from './Componentes/form';
 import { Contenedor } from './Componentes/contenedor'
 
-const App = ({categorias = ['pikachu']}) => {
+const App = ({categorias = []}) => {
   const [categoriasBusqueda, setCategoriasBusqueda] = useState(categorias);
   return (
     <div className="App">

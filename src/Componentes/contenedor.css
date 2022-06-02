@@ -1,0 +1,11 @@
+.contenedor{
+    background-color: #EF5350;
+    border-radius: 12px;
+    width: 250px;
+    height: 270px;
+    margin: 10px;
+}
+
+img{
+    width: 200px;
+}

@@ -15,7 +15,7 @@ export const useGetPokemones = (valorBusqueda) => {
                 pokemones: pokemones,
                 cargando: false
             })
-        }, 1000)
+        }, 20)
     }, [valorBusqueda])
 
     return estado;

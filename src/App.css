@@ -46,3 +46,10 @@ hr{
     transform: rotate(360deg);
   }
 }
+
+ol{
+  display: flex;
+  height: auto;
+  width: 839px;
+  flex-wrap: wrap;
+}
