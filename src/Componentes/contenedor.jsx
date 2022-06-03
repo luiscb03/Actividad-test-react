@@ -4,6 +4,7 @@ import { useGetPokemones } from '../hooks/useGetPokemones'
 import Pokeitem from './pokeItem';
 import {firebase} from '../firebase'
 import { BiTrashAlt, BiEditAlt } from "react-icons/bi";
+import 'animate.css';
 
 export const Contenedor = ({valorBusqueda}) => {
   const {pokemones, cargando} = useGetPokemones(valorBusqueda);
@@ -40,12 +41,16 @@ export const Contenedor = ({valorBusqueda}) => {
       }
   }
 
+  const editar = () =>{
+    const contenedor = document.getElementById('contenedor')
+    contenedor.className = "animate__headShake"
+  }
 
   return (
         <>
             {cargando && <p className='animate__animated animate__flash'>Cargando...</p>}
 
-            <div className='card-grid animate__animated animate__bounceInUp contenedor'>
+            <div className='card-grid animate__animated animate__bounceInUp contenedor' id='contenedor'>
                 {
 
                   <div className='card animate__animated animate__fadeIn'>
@@ -58,7 +63,7 @@ export const Contenedor = ({valorBusqueda}) => {
                     <button className="canecatbn" onClick={()=> eliminar(valorBusqueda.id)}>
                         <BiTrashAlt/>
                     </button>
-                    <button className="canecatbn">
+                    <button className="canecatbn" onClick={()=> editar(valorBusqueda.id)}>
                         <BiEditAlt/>
                     </button>
                 </div>
