@@ -3,13 +3,15 @@ import {useState} from 'react'
 import {firebase} from '../firebase'
 import { getPokemon } from '../helpers/getpokemon'
 
+let pokemones;
+
 export const Formulario =({setCategoriasBusqueda})=>{
     const [valorBusqueda, setValorBusqueda] = useState('');
     const [url, setUrl] = useState('');
     const [nombre, setNombre] = useState('')
     const [lista, setLista] = useState([])
 
-    let pokemones = getPokemon(valorBusqueda)
+    pokemones = getPokemon(valorBusqueda)
 
     const guardar = async (e) =>{
         // e.preventDefault()
@@ -32,7 +34,6 @@ export const Formulario =({setCategoriasBusqueda})=>{
             setNombre('')
             setUrl('')
 
-            alert('Guardado con exito!')
         } catch (error) {
             console.log(error)
         }
@@ -68,3 +69,4 @@ export const Formulario =({setCategoriasBusqueda})=>{
         </>
     );
 }
+

@@ -4,6 +4,7 @@ import { useGetPokemones } from '../hooks/useGetPokemones'
 import Pokeitem from './pokeItem';
 import {firebase} from '../firebase'
 import { BiTrashAlt, BiEditAlt } from "react-icons/bi";
+import { Swal, fire } from 'sweetalert';
 import 'animate.css';
 
 export const Contenedor = ({valorBusqueda}) => {
@@ -35,15 +36,36 @@ export const Contenedor = ({valorBusqueda}) => {
         db.collection('pokemones').doc(id).delete()
         const aux = lista.filter(item => item.id !== id)
         setLista(aux)
-        alert('eliminado con exito')
       }catch(error){
         console.log(error)
       }
   }
 
-  const editar = () =>{
-    const contenedor = document.getElementById('contenedor')
-    contenedor.className = "animate__headShake"
+  const editar = (id) =>{
+
+    // const input = document.getElementById('Valorusqueda')
+
+    // var pokeEdi;
+    // const buscar = lista.map((item) =>{
+    //       if (item.id === id) {
+    //         pokeEdi = item
+    //       }
+    // })
+
+    // input.innerText = pokeEdi.nombre
+    // console.log(input)
+
+    // try {
+    //     const db = firebase.firestore()
+    //     db.collection('pokemones').doc(id).update({
+    //         nombre: 'ivysaur',
+    //         url: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png`
+    //     })
+
+    //     alert('Informacion editada con exito')
+    // } catch (error) {
+    //     console.log(error)
+    // }
   }
 
   return (

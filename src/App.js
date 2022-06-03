@@ -44,7 +44,6 @@ const App = ({categorias = []}) => {
             ))
         }
     </ol>
-        {console.log(lista)}
     </div>
   );
 }
