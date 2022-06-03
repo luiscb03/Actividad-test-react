@@ -32,7 +32,7 @@ const App = ({categorias = []}) => {
   return (
     <div className="App">
         <img src={logo} alt='poke' className='poke'/>
-        <hr />
+        <hr className='hr'/>
         <Formulario setCategoriasBusqueda={setCategoriasBusqueda}/>
         <ol>
         {

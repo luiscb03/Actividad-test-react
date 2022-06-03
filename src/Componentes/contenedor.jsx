@@ -3,6 +3,7 @@ import './contenedor.css'
 import { useGetPokemones } from '../hooks/useGetPokemones'
 import Pokeitem from './pokeItem';
 import {firebase} from '../firebase'
+import { BiTrashAlt, BiEditAlt } from "react-icons/bi";
 
 export const Contenedor = ({valorBusqueda}) => {
   const {pokemones, cargando} = useGetPokemones(valorBusqueda);
@@ -25,7 +26,19 @@ export const Contenedor = ({valorBusqueda}) => {
         }
     }
     obtenerDatos()
-}, [lista])
+  }, [lista])
+
+  const eliminar = (id) =>{
+      try{
+        const db = firebase.firestore()
+        db.collection('pokemones').doc(id).delete()
+        const aux = lista.filter(item => item.id !== id)
+        setLista(aux)
+        alert('eliminado con exito')
+      }catch(error){
+        console.log(error)
+      }
+  }
 
 
   return (
@@ -40,6 +53,15 @@ export const Contenedor = ({valorBusqueda}) => {
                       <img src={valorBusqueda.url} alt = {valorBusqueda.nombre}/>
                   </div>
                 }
+                <hr className='spCard'/>
+                <div>
+                    <button className="canecatbn" onClick={()=> eliminar(valorBusqueda.id)}>
+                        <BiTrashAlt/>
+                    </button>
+                    <button className="canecatbn">
+                        <BiEditAlt/>
+                    </button>
+                </div>
             </div>
         </>
   )
