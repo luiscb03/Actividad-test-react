@@ -1,8 +1,42 @@
 import './form.css'
 import {useState} from 'react'
+import {firebase} from '../firebase'
+import { getPokemon } from '../helpers/getpokemon'
 
 export const Formulario =({setCategoriasBusqueda})=>{
     const [valorBusqueda, setValorBusqueda] = useState('');
+    const [url, setUrl] = useState('');
+    const [nombre, setNombre] = useState('')
+    const [lista, setLista] = useState([])
+
+    let pokemones = getPokemon(valorBusqueda)
+
+    const guardar = async (e) =>{
+        // e.preventDefault()
+        try {
+            const db = firebase.firestore()
+            const nuevoPokemon = {
+                nombre: pokemones.name,
+                url: pokemones.url
+            }
+            
+            setLista([...lista,
+                {
+                    nombre: pokemones.name,
+                    url: pokemones.url
+                }
+            ])
+            
+            await db.collection('pokemones').add(nuevoPokemon)
+
+            setNombre('')
+            setUrl('')
+
+            alert('Guardado con exito!')
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     const cambiarValorBusqueda= (e) => {
         setValorBusqueda(e.target.value);
@@ -15,6 +49,7 @@ export const Formulario =({setCategoriasBusqueda})=>{
           setValorBusqueda('')
         }
         
+        guardar()
     }
 
     return(
