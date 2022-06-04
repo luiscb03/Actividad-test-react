@@ -29,6 +29,7 @@ input{
     font-family: 'Zen Kaku Gothic Antique', sans-serif;
     font-size: 15px;
     color: #81c470;
+    text-transform: lowercase
 }
 
 .boton{

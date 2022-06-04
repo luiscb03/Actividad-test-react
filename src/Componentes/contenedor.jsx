@@ -4,7 +4,7 @@ import { useGetPokemones } from '../hooks/useGetPokemones'
 import Pokeitem from './pokeItem';
 import {firebase} from '../firebase'
 import { BiTrashAlt, BiEditAlt } from "react-icons/bi";
-import { Swal, fire } from 'sweetalert';
+import { Swal} from 'sweetalert';
 import 'animate.css';
 
 export const Contenedor = ({valorBusqueda}) => {

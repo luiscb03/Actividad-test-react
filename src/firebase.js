@@ -5,12 +5,12 @@ import 'firebase/firestore'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyB2S_5LO1LdEalgIz9zR7_iSTHjWParmcQ",
-  authDomain: "pokemones-5ef05.firebaseapp.com",
-  projectId: "pokemones-5ef05",
-  storageBucket: "pokemones-5ef05.appspot.com",
-  messagingSenderId: "670266157237",
-  appId: "1:670266157237:web:16f95af30dd8c5a058f6fc"
+  apiKey: "AIzaSyCFjwogjtG74VzhNY3eRhj2i5XP7kjMWs0",
+  authDomain: "pokemones-39458.firebaseapp.com",
+  projectId: "pokemones-39458",
+  storageBucket: "pokemones-39458.appspot.com",
+  messagingSenderId: "406440024711",
+  appId: "1:406440024711:web:5912a73a568ead8cb7b622"
 };
 
 // Initialize Firebase

@@ -49,7 +49,6 @@ export const Formulario =({setCategoriasBusqueda})=>{
           setCategoriasBusqueda(valores => [valorBusqueda, ...valores])
           setValorBusqueda('')
         }
-        
         guardar()
     }
 
